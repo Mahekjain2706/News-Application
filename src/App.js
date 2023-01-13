@@ -3,6 +3,7 @@ import './App.css';
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import News from './components/News.js';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -32,6 +33,7 @@ export default class App extends Component {
             <Route exact path="technology" element=  {<News key="technology" pageSize={this.pageSize} country="in"   Ccolor="info" category="technology" />} />
           </Routes>
         </Router>
+
       </div>
     )
   }
