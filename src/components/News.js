@@ -45,7 +45,7 @@ export class News extends Component {
          let data =await fetch(url);
          this.props.setProgress(30);
          let parsedData = await data.json()
-         console.log(parsedData);
+        //  console.log(parsedData);
          this.props.setProgress(70);
          this.setState({articles : parsedData.articles, totalResults: parsedData.totalResults,loading:false})
          this.props.setProgress(100);
@@ -53,7 +53,7 @@ export class News extends Component {
 
     async componentDidMount(){
         //  console.log("cdm");
-        //  let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=30e5f29bf3e445fd89c158288e6b28f2&page=1&pageSize=${this.props.pageSize}`;
+        //  let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${apiKey}&page=1&pageSize=${this.props.pageSize}`;
         //  this.setState({loading: true});
         //  let data =await fetch(url);
         //  let parsedData = await data.json()
@@ -64,7 +64,7 @@ export class News extends Component {
 
     preClick = async ()=>{
         // console.log("Previous")
-        // let url = `https://newsapi.org/v2/top-headlines?&country=${this.props.country}&category=${this.props.category}&apiKey=30e5f29bf3e445fd89c158288e6b28f2&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+        // let url = `https://newsapi.org/v2/top-headlines?&country=${this.props.country}&category=${this.props.category}&apiKey=${apiKey}&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
         // this.setState({loading: true});
         // let data =await fetch(url);
         // let parsedData = await data.json()
@@ -77,7 +77,7 @@ export class News extends Component {
         
     }
 
-    nextClick = async (props)=>{
+    nextClick = async ()=>{
         // console.log("Next");
         // let url = `https://newsapi.org/v2/top-headlines?&country=${this.props.country}&category=${this.props.category}&apiKey=30e5f29bf3e445fd89c158288e6b28f2&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
         // this.setState({loading: true});
@@ -109,7 +109,7 @@ export class News extends Component {
         return (<>
             {/*<div className="container my-3">*/}
             
-                <h1 className="text-center">NewsMoney - Top Headlines from {this.capitalize(this.props.category)}</h1>
+                <h1 className="text-center" style={{margin: '35px 0px', marginTop:'90px'}}>NewsMoney - Top Headlines from {this.capitalize(this.props.category)}</h1>
                 {this.state.loading && <Spinner/>}
                 
                 <InfiniteScroll
