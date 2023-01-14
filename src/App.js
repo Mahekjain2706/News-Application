@@ -17,7 +17,7 @@ import {
 // top loading bar
 export default class App extends Component {
   pageSize =  20;
-  apiKey = process.env.REACT_APP_NEWS_API;
+  apiKey = process.env.REACT_APP_SECRET_CODE
   state = {
        progress:0,
   }
